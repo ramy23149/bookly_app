@@ -1,5 +1,6 @@
-import 'package:bookly_app/features/home/presentation/views/widgets/List_view_item.dart';
+import 'package:bookly_app/core/styles.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/costum_appbar.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/uper_list_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -7,28 +8,18 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        CostumAppBar(),
-        UperListView(),
-      ],
+    return const Padding(
+      padding: EdgeInsets.only(left: 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          CostumAppBar(),
+          UperListView(),
+          SizedBox(height: 50,),
+          Text('Best Seller',style: Styles.titleMedium,)
+        ],
+      ),
     );
   }
 }
 
-class UperListView extends StatelessWidget {
-  const UperListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height*.26,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: 10,
-        itemBuilder: (context, index) {
-        return const ListViewItem();
-      }),
-    );
-  }
-}

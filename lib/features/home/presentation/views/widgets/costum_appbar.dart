@@ -8,7 +8,7 @@ class CostumAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-          padding: const EdgeInsets.only(left: 16,top: 27,right: 16,bottom: 12),
+          padding: const EdgeInsets.only(top: 27,bottom: 12,right: 17),
           child: Row(
             children: [
               Image.asset(KLogo,height: 60,),

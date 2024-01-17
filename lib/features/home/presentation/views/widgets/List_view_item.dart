@@ -5,10 +5,10 @@ class ListViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height*.26,
-      child: AspectRatio(
-        aspectRatio: 3/4,
+    return AspectRatio(
+      aspectRatio: 3/4,
+      child: Padding(
+        padding: const EdgeInsets.only(left: 16,),
         child: Container(
           decoration:  BoxDecoration(
             borderRadius: BorderRadius.circular(16),

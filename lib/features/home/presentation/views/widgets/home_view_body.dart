@@ -15,11 +15,47 @@ class HomeViewBody extends StatelessWidget {
         children: [
           CostumAppBar(),
           UperListView(),
-          SizedBox(height: 50,),
-          Text('Best Seller',style: Styles.titleMedium,)
+          SizedBox(
+            height: 50,
+          ),
+          Text(
+            'Best Seller',
+            style: Styles.textStyle18,
+          ),
+          BestSellerListViewItem()
         ],
       ),
     );
   }
 }
 
+class BestSellerListViewItem extends StatelessWidget {
+  const BestSellerListViewItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 130,
+      child: Row(
+        children: [
+           AspectRatio(
+      aspectRatio: 2.7/4,
+      child: Padding(
+        padding: const EdgeInsets.only(right: 16),
+        child: Container(
+          decoration:  BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            
+            image: const DecorationImage(
+              fit: BoxFit.fill,
+              image: AssetImage('assets/images/me.jpg',)) 
+          ),
+        ),
+      ),
+    )
+          
+        ],
+      ),
+    );
+  }
+}

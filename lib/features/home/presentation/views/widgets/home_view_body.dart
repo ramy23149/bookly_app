@@ -22,6 +22,7 @@ class HomeViewBody extends StatelessWidget {
             'Best Seller',
             style: Styles.textStyle18,
           ),
+          SizedBox(height: 30,),
           BestSellerListViewItem()
         ],
       ),
@@ -38,22 +39,35 @@ class BestSellerListViewItem extends StatelessWidget {
       height: 130,
       child: Row(
         children: [
-           AspectRatio(
-      aspectRatio: 2.7/4,
-      child: Padding(
-        padding: const EdgeInsets.only(right: 16),
-        child: Container(
-          decoration:  BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-            
-            image: const DecorationImage(
-              fit: BoxFit.fill,
-              image: AssetImage('assets/images/me.jpg',)) 
+          AspectRatio(
+            aspectRatio: 2.7 / 4,
+            child: Padding(
+              padding: const EdgeInsets.only(right: 16),
+              child: Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    image: const DecorationImage(
+                        fit: BoxFit.fill,
+                        image: AssetImage(
+                          'assets/images/me.jpg',
+                        ))),
+              ),
+            ),
           ),
-        ),
-      ),
-    )
-          
+          const SizedBox(width: 30,),
+           Column(
+            children: [
+              SizedBox(
+                width: MediaQuery.of(context).size.width*.5,
+                child:const Text(
+                  'Harry Potter and the Goblet of Fire',
+                  style: Styles.textStyle20,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ],
+          )
         ],
       ),
     );

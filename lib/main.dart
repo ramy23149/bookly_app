@@ -1,8 +1,9 @@
 import 'package:bookly_app/constans.dart';
+import 'package:bookly_app/core/router.dart';
 
-import 'package:bookly_app/features/splash/presentation/views/splash_view.dart';
+
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class BooklyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  GetMaterialApp(
+    return  MaterialApp.router(
       
 
       debugShowCheckedModeBanner: false,
@@ -24,7 +25,11 @@ class BooklyApp extends StatelessWidget {
         ),
       ),
 
-      home:  const SpalshView(),
+    routerConfig: RouterApp.router,
     );
   }
 }
+
+
+
+

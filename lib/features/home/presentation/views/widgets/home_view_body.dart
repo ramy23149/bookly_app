@@ -1,6 +1,5 @@
 import 'package:bookly_app/constans.dart';
 import 'package:bookly_app/core/styles.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/Best_Seller_List_View_Item.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/best_seller_list_view.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/costum_appbar.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/uper_list_view.dart';
@@ -39,7 +38,7 @@ class HomeViewBody extends StatelessWidget {
           ),
         ),
 
-         BestSellerListView()
+         BestSellerListView(),
       ],
     );
   }

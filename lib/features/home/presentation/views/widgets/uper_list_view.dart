@@ -1,4 +1,4 @@
-import 'package:bookly_app/features/home/presentation/views/widgets/List_view_item.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 
 class UperListView extends StatelessWidget {
@@ -12,7 +12,7 @@ class UperListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: 10,
         itemBuilder: (context, index) {
-        return const ListViewItem();
+        return const CustomBookImage();
       }),
     );
   }

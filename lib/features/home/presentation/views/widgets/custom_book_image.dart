@@ -2,8 +2,9 @@ import 'package:bookly_app/core/router.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class ListViewItem extends StatelessWidget {
-  const ListViewItem({super.key});
+class CustomBookImage extends StatelessWidget {
+  const CustomBookImage({super.key, });
+
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +17,13 @@ class ListViewItem extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.only(right: 16),
           child: Container(
-            decoration:  BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              
-              image: const DecorationImage(
-                fit: BoxFit.fill,
-                image: AssetImage('assets/images/me.jpg',))
-            ),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                image: const DecorationImage(
+                    fit: BoxFit.fill,
+                    image: AssetImage(
+                      'assets/images/me.jpg',
+                    ))),
           ),
         ),
       ),

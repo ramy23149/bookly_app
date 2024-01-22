@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class CustomBookImage extends StatelessWidget {
-  const CustomBookImage({super.key, });
+  const CustomBookImage({
+    super.key,  this.padding,
+  });
 
-
+  final EdgeInsetsGeometry? padding;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -13,9 +15,9 @@ class CustomBookImage extends StatelessWidget {
         context.push(RouterApp.kBookDetailsView);
       },
       child: AspectRatio(
-        aspectRatio: 3/4,
+        aspectRatio: 2.7 / 4,
         child: Padding(
-          padding: const EdgeInsets.only(right: 16),
+          padding: padding??const EdgeInsets.only(right: 16),
           child: Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),

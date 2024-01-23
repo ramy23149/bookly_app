@@ -20,7 +20,7 @@ class CostumAppBar extends StatelessWidget {
           const Spacer(),
           IconButton(
               onPressed: () {
-                context.go(RouterApp.kSearchView);
+                context.push(RouterApp.kSearchView);
               },
               icon: const Icon(
                 FontAwesomeIcons.magnifyingGlass,

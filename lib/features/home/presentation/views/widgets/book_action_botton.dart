@@ -18,7 +18,8 @@ class BooksAction extends StatelessWidget {
           child: CustomBotton(
             text: 'Free Previwe',
             borderRadius: BorderRadius.only(
-                topRight: Radius.circular(16), bottomRight: Radius.circular(16)),
+                topRight: Radius.circular(16),
+                bottomRight: Radius.circular(16)),
             backgroundColor: Color(0xffEA845F),
             textColor: Colors.white,
           ),

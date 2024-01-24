@@ -4,7 +4,8 @@ import 'package:go_router/go_router.dart';
 
 class CustomBookImage extends StatelessWidget {
   const CustomBookImage({
-    super.key,  this.padding,
+    super.key,
+    this.padding,
   });
 
   final EdgeInsetsGeometry? padding;
@@ -17,7 +18,7 @@ class CustomBookImage extends StatelessWidget {
       child: AspectRatio(
         aspectRatio: 2.7 / 4,
         child: Padding(
-          padding: padding??const EdgeInsets.only(right: 16),
+          padding: padding ?? const EdgeInsets.only(right: 16),
           child: Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),

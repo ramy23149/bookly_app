@@ -10,15 +10,14 @@ class SmilerBooksSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-             Text(
-               'you can also see',
-               style:
-                   Styles.textStyle14.copyWith(fontWeight: FontWeight.w700),
-             ),
-          const SizedBox(
-            height: 16,
-          ),
-          const BookDetailsListView(),
+        Text(
+          'you can also see',
+          style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w700),
+        ),
+        const SizedBox(
+          height: 16,
+        ),
+        const BookDetailsListView(),
       ],
     );
   }

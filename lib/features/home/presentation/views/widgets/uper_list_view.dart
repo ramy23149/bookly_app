@@ -7,13 +7,15 @@ class UperListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height*.26,
+      height: MediaQuery.of(context).size.height * .26,
       child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: 10,
-        itemBuilder: (context, index) {
-        return const CustomBookImage(padding: EdgeInsets.only(right: 16),);
-      }),
+          scrollDirection: Axis.horizontal,
+          itemCount: 10,
+          itemBuilder: (context, index) {
+            return const CustomBookImage(
+              padding: EdgeInsets.only(right: 16),
+            );
+          }),
     );
   }
 }

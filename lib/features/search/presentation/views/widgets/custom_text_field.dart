@@ -8,7 +8,7 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       decoration: InputDecoration(
-        enabledBorder:  buildOutLineInputBorder(Colors.grey),
+        enabledBorder: buildOutLineInputBorder(Colors.grey),
         focusedBorder: buildOutLineInputBorder(Colors.white),
         hintText: 'Search',
         suffixIcon: IconButton(
@@ -26,8 +26,7 @@ class CustomTextField extends StatelessWidget {
 
   OutlineInputBorder buildOutLineInputBorder(Color color) {
     return OutlineInputBorder(
-       borderRadius: BorderRadius.circular(12),
-       borderSide:  BorderSide(color:color)
-      );
+        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide(color: color));
   }
 }

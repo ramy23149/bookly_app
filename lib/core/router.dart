@@ -25,9 +25,8 @@ abstract class RouterApp {
       GoRoute(
           builder: (context, state) => const BookDetailsView(),
           path: kBookDetailsView),
-          GoRoute(
-            builder: (context, state) => const SearchView(),
-            path: kSearchView)
+      GoRoute(
+          builder: (context, state) => const SearchView(), path: kSearchView)
     ],
   );
 }

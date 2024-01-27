@@ -20,7 +20,7 @@ class HomeViewBody extends StatelessWidget {
                 padding: EdgeInsets.only(left: 30),
                 child: CostumAppBar(),
               ),
-              UperListView(),
+              NewsetBooks(),
               SizedBox(
                 height: 50,
               ),
@@ -37,7 +37,7 @@ class HomeViewBody extends StatelessWidget {
             ],
           ),
         ),
-        BestSellerListView(),
+        FeaturedBooks(),
       ],
     );
   }

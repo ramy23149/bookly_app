@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:bookly_app/core/api_service.dart';
 import 'package:bookly_app/core/errors/falier.dart';
 import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
@@ -10,7 +8,9 @@ import 'package:dio/dio.dart';
 class HomeRepoImpl implements HomeRepo {
   final ApiService apiService;
 
-  HomeRepoImpl(this.apiService);
+  HomeRepoImpl(
+    this.apiService,
+  );
   @override
   Future<Either<Failer, List<BookModel>>> fetchNewsetBooks() async {
     try {
@@ -21,18 +21,19 @@ class HomeRepoImpl implements HomeRepo {
       List<BookModel> books = [];
 
       for (var item in data['items']) {
-        //azay mn model 3la tol??
-        books.add(BookModel.fromJson(item));//Book model leh m4 item 3la tol??
+        books.add(BookModel.fromJson(item));
       }
       return right(books);
-    } on DioException catch (e) {
-      return left(ServerFailer());
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailer.fromDioExption(e));
+      } 
+        return left(ServerFailer(e.toString()));
     }
   }
 
   @override
   Future<Either<Failer, List<BookModel>>> fetchFeaturedBooks() {
-    // TODO: implement fetchFeaturedBooks
     throw UnimplementedError();
   }
 }

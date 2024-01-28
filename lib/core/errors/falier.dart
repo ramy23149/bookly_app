@@ -21,7 +21,7 @@ class ServerFailer extends Failer {
         return ServerFailer('Bad Certificate');
       case DioExceptionType.badResponse:
         return ServerFailer.fromResponse(
-            dioException.response!.statusCode!, dioException.response!.data);
+            dioException.response!.statusCode!, dioException.response);
       case DioExceptionType.cancel:
         return ServerFailer('Response was canceled');
       case DioExceptionType.connectionError:
@@ -30,14 +30,12 @@ class ServerFailer extends Failer {
         if (dioException.message!.contains('SocketExceptoin')) {
           return ServerFailer('No internet Connection');
         }
-          return ServerFailer('Unexpected Error, Please try again');
+        return ServerFailer('Unexpected Error, Please try again');
       default:
         return ServerFailer('Opps There was an error, Please try later');
     }
-  
   }
-  factory ServerFailer.fromResponse(
-      int statusCode, Map<String, dynamic> response) {
+  factory ServerFailer.fromResponse(int statusCode, dynamic response) {
     if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
       return ServerFailer(response['error']['message']);
     } else if (statusCode == 404) {

@@ -2,7 +2,7 @@ import 'package:bookly_app/constans.dart';
 import 'package:bookly_app/core/styles.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/best_seller_list_view.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/costum_appbar.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/uper_list_view.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/newset_list_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {

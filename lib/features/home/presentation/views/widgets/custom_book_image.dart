@@ -6,8 +6,9 @@ class CustomBookImage extends StatelessWidget {
   const CustomBookImage({
     super.key,
     this.padding,
+    required this.imageUrl,
   });
-
+  final String imageUrl;
   final EdgeInsetsGeometry? padding;
   @override
   Widget build(BuildContext context) {
@@ -22,10 +23,11 @@ class CustomBookImage extends StatelessWidget {
           child: Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
-                image: const DecorationImage(
+                image: DecorationImage(
                     fit: BoxFit.fill,
-                    image: AssetImage(
-                      'assets/images/me.jpg',
+                    image: NetworkImage(
+                      imageUrl
+                          
                     ))),
           ),
         ),

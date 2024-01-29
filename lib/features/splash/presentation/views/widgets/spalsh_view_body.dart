@@ -14,7 +14,6 @@ class SplashViewBody extends StatefulWidget {
 
 class _SplashViewBodyState extends State<SplashViewBody>
     with SingleTickerProviderStateMixin {
-  //reed here
   late AnimationController animatedController;
   late Animation<Offset> slidingAnimation;
 

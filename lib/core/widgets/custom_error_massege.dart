@@ -6,9 +6,11 @@ class CustomErrorMassege extends StatelessWidget {
   final String errMassege;
   @override
   Widget build(BuildContext context) {
-    return Text(
-      errMassege,
-      style: Styles.textStyle18,
+    return Center(
+      child: Text(
+        errMassege,
+        style: Styles.textStyle18,
+      ),
     );
   }
 }

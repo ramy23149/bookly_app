@@ -39,7 +39,8 @@ class SearchResultListView extends StatelessWidget {
     return ListView.builder(
       itemCount: 10,
       itemBuilder: (context, index) {
-        return const BookListViewItem();
+        return const Text('skjfhkjdshgf');
+        // return const BookListViewItem();
       },
     );
   }

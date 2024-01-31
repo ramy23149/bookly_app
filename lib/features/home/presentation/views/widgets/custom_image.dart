@@ -22,7 +22,7 @@ class CustomImage extends StatelessWidget {
           child: CachedNetworkImage(
               //  progressIndicatorBuilder: (context, url, progress) => const Center(child: CircularProgressIndicator()),
               fit: BoxFit.fill,
-              errorWidget: (context, url, error) => const Icon(Icons.error),
+              errorWidget:(context, url, error) => Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-7pvKBFQH14tQp9AXqI4PnB-M0FbLWyyDCQ&usqp=CAU'),
               imageUrl: imageUrl),
         ),
       ),

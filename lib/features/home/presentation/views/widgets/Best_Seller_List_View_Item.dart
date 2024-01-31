@@ -27,7 +27,7 @@ final  BookModel bookModel;
             children: [
               CustomImage(
                   padding: const EdgeInsets.only(right: 16),
-                  imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail??''),
+                  imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail??'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-7pvKBFQH14tQp9AXqI4PnB-M0FbLWyyDCQ&usqp=CAU'),
               const SizedBox(
                 width: 30,
               ),

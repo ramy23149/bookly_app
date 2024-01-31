@@ -17,14 +17,14 @@ class CustomImage extends StatelessWidget {
       aspectRatio: 2.7 / 4,
       child: Padding(
         padding: padding ?? const EdgeInsets.only(right: 16),
-        child:ClipRRect(
+        child: ClipRRect(
           borderRadius: BorderRadius.circular(16),
           child: CachedNetworkImage(
-          //  progressIndicatorBuilder: (context, url, progress) => const Center(child: CircularProgressIndicator()),
-            fit: BoxFit.fitWidth,
-            errorWidget: (context, url, error) => const Icon(Icons.error_outline_sharp),
-            imageUrl: imageUrl),
-        ) ,
+              //  progressIndicatorBuilder: (context, url, progress) => const Center(child: CircularProgressIndicator()),
+              fit: BoxFit.fill,
+              errorWidget: (context, url, error) => const Icon(Icons.error),
+              imageUrl: imageUrl),
+        ),
       ),
     );
   }

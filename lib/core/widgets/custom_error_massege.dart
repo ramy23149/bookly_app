@@ -10,6 +10,7 @@ class CustomErrorMassege extends StatelessWidget {
       child: Text(
         errMassege,
         style: Styles.textStyle18,
+        textAlign: TextAlign.center,
       ),
     );
   }

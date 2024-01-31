@@ -27,7 +27,7 @@ final  BookModel bookModel;
             children: [
               CustomImage(
                   padding: const EdgeInsets.only(right: 16),
-                  imageUrl: bookModel.volumeInfo.imageLinks.thumbnail),
+                  imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail??''),
               const SizedBox(
                 width: 30,
               ),
@@ -64,7 +64,7 @@ final  BookModel bookModel;
                         ),
                         const Spacer(),
                         BookRating(
-                        ratting: bookModel.volumeInfo.averageRating??0,
+                        ratting: bookModel.volumeInfo.averageRating?.round()??0,
                         rattingCount: bookModel.volumeInfo.ratingsCount??0,
                         )
                       ],

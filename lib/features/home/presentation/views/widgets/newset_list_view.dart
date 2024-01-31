@@ -21,7 +21,7 @@ class NewsetBooks extends StatelessWidget {
                 itemCount: state.books.length,
                 itemBuilder: (context, index) {
                   return  CustomBookImage(
-                    imageUrl:state.books[index].volumeInfo.imageLinks.smallThumbnail ,
+                    imageUrl:state.books[index].volumeInfo.imageLinks?.thumbnail??'' ,
                    padding: const EdgeInsets.only(right: 16),
                   );
                 }),

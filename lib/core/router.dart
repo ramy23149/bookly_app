@@ -34,7 +34,9 @@ abstract class RouterApp {
                   state.extra as BookModel
                   
                 )..fetchSuggestionBooks(),
-                child: const BookDetailsView(),
+                child:   BookDetailsView(
+                   bookModel: state.extra as BookModel,
+                ),
               ),
           path: kBookDetailsView),
       GoRoute(

@@ -6,7 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class NewsetBooks extends StatelessWidget {
-  const NewsetBooks({super.key,});
+  const NewsetBooks({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +18,16 @@ class NewsetBooks extends StatelessWidget {
           return SizedBox(
             height: MediaQuery.of(context).size.height * .26,
             child: ListView.builder(
-              physics: const BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 itemCount: state.books.length,
                 itemBuilder: (context, index) {
-                  return  CustomBookImage(
-                    imageUrl:state.books[index].volumeInfo.imageLinks?.thumbnail??'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-7pvKBFQH14tQp9AXqI4PnB-M0FbLWyyDCQ&usqp=CAU' ,
-                   padding: const EdgeInsets.only(right: 16),
+                  return CustomBookImage(
+                    bookModel: state.books[index],
+                    imageUrl: state
+                            .books[index].volumeInfo.imageLinks?.thumbnail ??
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-7pvKBFQH14tQp9AXqI4PnB-M0FbLWyyDCQ&usqp=CAU',
+                    padding: const EdgeInsets.only(right: 16),
                   );
                 }),
           );

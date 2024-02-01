@@ -17,7 +17,9 @@ final  BookModel bookModel;
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.push(RouterApp.kBookDetailsView);
+
+        context.push(RouterApp.kBookDetailsView,extra: bookModel
+        );
       },
       child: Padding(
         padding: const EdgeInsets.only(bottom: 20),

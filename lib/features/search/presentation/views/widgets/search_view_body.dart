@@ -1,7 +1,7 @@
 import 'package:bookly_app/core/styles.dart';
 import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/Best_Seller_List_View_Item.dart';
 import 'package:bookly_app/features/search/presentation/views/widgets/custom_text_field.dart';
+import 'package:bookly_app/features/search/presentation/views/widgets/search_result_list_view.dart';
 import 'package:flutter/material.dart';
 
 class SearchViewBody extends StatelessWidget {
@@ -28,22 +28,6 @@ class SearchViewBody extends StatelessWidget {
           Expanded(child: SearchResultListView()),
         ],
       ),
-    );
-  }
-}
-
-class SearchResultListView extends StatelessWidget {
-  const SearchResultListView({super.key, //required this.bookModel
-  });
-//  final BookModel bookModel;
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: 10,
-      itemBuilder: (context, index) {
-         return const Text('skjfhkjdshgf');
-        //return BookListViewItem();
-      },
     );
   }
 }

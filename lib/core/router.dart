@@ -4,6 +4,8 @@ import 'package:bookly_app/features/home/data/repos/home_repo_impl.dart';
 import 'package:bookly_app/features/home/presentation/maneger/suggestion_Books_cubit/suggestion_books_cubit.dart';
 import 'package:bookly_app/features/home/presentation/views/book_details.dart';
 import 'package:bookly_app/features/home/presentation/views/home_view.dart';
+import 'package:bookly_app/features/search/presentation/data/repos/search_repo_imple.dart';
+import 'package:bookly_app/features/search/presentation/maneger/searching_cubit/search_cubit.dart';
 import 'package:bookly_app/features/search/presentation/views/search_view.dart';
 import 'package:bookly_app/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
@@ -28,19 +30,23 @@ abstract class RouterApp {
         builder: (context, state) => const HomeView(),
       ),
       GoRoute(
-          builder: (context, state) =>  BlocProvider(
+          builder: (context, state) => BlocProvider(
                 create: (context) => SuggestionBooksCubit(
-                  getIt.get<HomeRepoImpl>(),
-                  state.extra as BookModel
-                  
-                )..fetchSuggestionBooks(),
-                child:   BookDetailsView(
-                   bookModel: state.extra as BookModel,
+                    getIt.get<HomeRepoImpl>(), state.extra as BookModel)
+                  ..fetchSuggestionBooks(),
+                child: BookDetailsView(
+                  bookModel: state.extra as BookModel,
                 ),
               ),
           path: kBookDetailsView),
       GoRoute(
-          builder: (context, state) => const SearchView(), path: kSearchView)
+          builder: (context, state) => BlocProvider(
+                create: (context) => SearchCubit(
+                  getIt.get<SearchRopoImple>(),
+                ),//..getSerchBooks(bookName: ),
+                child: const SearchView(),
+              ),
+          path: kSearchView)
     ],
   );
 }

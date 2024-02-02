@@ -10,12 +10,11 @@ class SearchRopoImple implements SearchRopo {
 
   SearchRopoImple(this.apiService);
   @override
-  Future<Either<Failer, List<BookModel>>> fetchSearchBooks(
-      {required String searchingAbout}) async {
+  Future<Either<Failer, List<BookModel>>> fetchSearchBooks({required String? bookName}) async {
     try {
       var data = await apiService.get(
           endPoint:
-              'volumes?Filtering=free-ebooks&Sorting=relevance&q=subject:$searchingAbout');
+              'volumes?Filtering=free-ebooks&Sorting=relevance&q=intitle:$bookName');
       List<BookModel> bookItems = [];
 
       for (var item in data['items']) {

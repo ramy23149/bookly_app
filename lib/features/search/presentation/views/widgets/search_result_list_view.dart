@@ -17,6 +17,7 @@ class SearchResultListView extends StatelessWidget {
       builder: (context, state) {
         if (state is SearchSuccess) {
           return ListView.builder(
+            physics: const NeverScrollableScrollPhysics(),
             itemCount: state.books.length,
             itemBuilder: (context, index) {
               return BookListViewItem(
@@ -29,7 +30,7 @@ class SearchResultListView extends StatelessWidget {
         } else if (state is SearchLoading) {
           return const CustomLoadingIndecator();
         } else {
-          return InitialState();
+          return const InitialState();
         }
       },
     );

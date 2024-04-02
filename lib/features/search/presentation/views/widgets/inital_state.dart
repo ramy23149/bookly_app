@@ -7,7 +7,7 @@ class InitialState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-    child: Text('there are no books, start searching now🔍',style: Styles.textStyle20,maxLines: 2,overflow:TextOverflow.visible,),
+    child: Text('there are no books, start searching now🔍',style: Styles.textStyle20,maxLines: 2,overflow:TextOverflow.ellipsis,),
     );
   }
 }

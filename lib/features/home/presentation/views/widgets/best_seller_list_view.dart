@@ -17,7 +17,8 @@ class FeaturedBooks extends StatelessWidget {
       builder: (context, state) {
         if (state is FeaturedBooksSuccess) {
           return ListView.builder(
-            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+           physics: const NeverScrollableScrollPhysics(),
             itemCount: state.books.length,
             itemBuilder: (context, index) => Padding(
               padding: kPadding,

@@ -18,6 +18,7 @@ class NewsetBooks extends StatelessWidget {
           return SizedBox(
             height: MediaQuery.of(context).size.height * .26,
             child: ListView.builder(
+              shrinkWrap: true,
                 physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 itemCount: state.books.length,

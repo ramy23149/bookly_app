@@ -12,33 +12,24 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'generated/l10n.dart';
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await SharedPreferences.getInstance().then((pref) {
-    var themeMode = pref.getBool('themeMode');
-    if (themeMode == true) {
-      activeTheme = lightTheme;
-    } else {
-      activeTheme = darkTheme;
-    }
-  });
-  await SharedPreferences.getInstance().then((pref) {
-    var locale = pref.getBool('locale');
-    if (locale == false) {
-      localeLung = defaultLocale;
-    } else {
-      localeLung = arabicLocale;
-    }
-  });
+
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+  final bool? themeMode = prefs.getBool('themeMode');
+  activeTheme = themeMode == true ? lightTheme : darkTheme;
+
+  final bool? locale = prefs.getBool('locale');
+  localeLung = locale == false ? defaultLocale : arabicLocale;
+
   setupServiceLocator();
+
   runApp(
     MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (context) => AppNotifier(
-            activeTheme, localeLung
-          ),
+          create: (context) => AppNotifier(activeTheme, localeLung),
         ),
       ],
       child: const BooklyApp(),
@@ -48,7 +39,6 @@ void main() async {
 
 class BooklyApp extends StatelessWidget {
   const BooklyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     final themeNotifer = Provider.of<AppNotifier>(context);
@@ -78,7 +68,6 @@ class BooklyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: themeNotifer.getTheme,
         routerConfig: RouterApp.router,
-        //  routeInformationParser: RouterApp.router.routeInformationParser,
       ),
     );
   }

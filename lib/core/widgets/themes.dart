@@ -7,7 +7,7 @@ Locale? localeLung;
 
 
 final ThemeData lightTheme = ThemeData.light().copyWith(
-  scaffoldBackgroundColor: Colors.white,
+  scaffoldBackgroundColor: const Color.fromARGB(255, 223, 221, 221),
   textTheme: GoogleFonts.montserratTextTheme(
     ThemeData.light().textTheme,
   ),

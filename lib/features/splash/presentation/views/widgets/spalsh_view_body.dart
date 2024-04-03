@@ -2,7 +2,9 @@ import 'package:bookly_app/constans.dart';
 import 'package:bookly_app/core/router.dart';
 
 import 'package:bookly_app/features/splash/presentation/views/widgets/sliding_text.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -16,6 +18,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     with SingleTickerProviderStateMixin {
   late AnimationController animatedController;
   late Animation<Offset> slidingAnimation;
+
 
   @override
   void initState() {
@@ -52,12 +55,11 @@ class _SplashViewBodyState extends State<SplashViewBody>
       end: Offset.zero,
     ).animate(animatedController);
 
-    animatedController.forward(); // abda t48el
+    animatedController.forward(); 
   }
 
   void navigateToHome() {
     Future.delayed(const Duration(seconds: 3), () {
-      //  Get.to(() =>const HomeView(),transition: Transition.fade,duration: KTranstionDuration);
 
       context.go(RouterApp.kHomeView);
     });

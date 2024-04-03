@@ -14,14 +14,14 @@ class CostumAppBar extends StatelessWidget {
     return SizedBox(
       width: MediaQuery.of(context).size.width,
       child: Padding(
-        padding: const EdgeInsets.only(top: 27, bottom: 12, right: 17),
+        padding: const EdgeInsets.only(top: 10, bottom: 12, right: 17),
         child: Row(
           children: [
             IconButton(
                 onPressed: () {
                   Scaffold.of(context).openDrawer();
                 },
-                icon: const Icon(Icons.list)),
+                icon: const Icon(Icons.list,size: 30,)),
             Image.asset(
               KLogo,
               height: 60,

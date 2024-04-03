@@ -60,10 +60,10 @@ class S {
     );
   }
 
-  /// `Settings`
+  /// `  Settings`
   String get drowerTile {
     return Intl.message(
-      'Settings',
+      '  Settings',
       name: 'drowerTile',
       desc: '',
       args: [],

@@ -25,7 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "appLanguage": MessageLookupByLibrary.simpleMessage("الترجمة"),
         "appTheme": MessageLookupByLibrary.simpleMessage("وضع التطبيق"),
         "bookName": MessageLookupByLibrary.simpleMessage("اسم الكتاب"),
-        "drowerTile": MessageLookupByLibrary.simpleMessage("الاعدادات"),
+        "drowerTile": MessageLookupByLibrary.simpleMessage("  الاعدادات"),
         "preivew": MessageLookupByLibrary.simpleMessage("مشاهدة"),
         "results": MessageLookupByLibrary.simpleMessage("النتائج"),
         "suggest": MessageLookupByLibrary.simpleMessage("يمكنك ايضا مشاهدة"),

@@ -29,6 +29,8 @@ class _TranslateSwitcherState extends State<TranslateSwitcher> {
   Widget build(BuildContext context) {
     final locale = Provider.of<AppNotifier>(context);
     return Switch(
+            activeTrackColor: Colors.grey,
+            inactiveTrackColor: Colors.grey,
         activeColor: Colors.white,
         inactiveThumbColor: Colors.black12,
         value:locale.getLocale==defaultLocale?false:isActive,

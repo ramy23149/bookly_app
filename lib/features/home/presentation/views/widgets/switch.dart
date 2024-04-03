@@ -33,6 +33,8 @@ class _SwitchThemeAppState extends State<SwitchThemeApp> {
   Widget build(BuildContext context) {
     final themeMode = Provider.of<AppNotifier>(context);
     return Switch(
+      activeTrackColor: Colors.grey,
+      inactiveTrackColor: Colors.grey,
         activeColor: Colors.white,
         activeThumbImage: const AssetImage('assets/images/moon.png'),
         inactiveThumbImage: const AssetImage('assets/images/sun.webp'),

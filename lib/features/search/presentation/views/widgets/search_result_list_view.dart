@@ -1,4 +1,3 @@
-import 'package:bookly_app/core/widgets/custom_error_massege.dart';
 import 'package:bookly_app/core/widgets/custom_loading_indecator.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/Best_Seller_List_View_Item.dart';
 import 'package:bookly_app/features/search/presentation/maneger/searching_cubit/search_cubit.dart';
@@ -17,7 +16,7 @@ class SearchResultListView extends StatelessWidget {
       builder: (context, state) {
         if (state is SearchSuccess) {
           return ListView.builder(
-            physics: const NeverScrollableScrollPhysics(),
+            //physics: const NeverScrollableScrollPhysics(),
             itemCount: state.books.length,
             itemBuilder: (context, index) {
               return BookListViewItem(
@@ -26,11 +25,13 @@ class SearchResultListView extends StatelessWidget {
             },
           );
         } else if (state is SearchFailer) {
-          return CustomErrorMassege(errMassege: state.errmassege);
+          return const StateImage(imagePath: 'assets/images/unfind.png');
         } else if (state is SearchLoading) {
           return const CustomLoadingIndecator();
         } else {
-          return const InitialState();
+          return const StateImage(
+            imagePath: 'assets/images/book.png',
+          );
         }
       },
     );

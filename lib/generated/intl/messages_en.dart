@@ -26,7 +26,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "appTheme": MessageLookupByLibrary.simpleMessage("App Theme"),
         "bookName": MessageLookupByLibrary.simpleMessage("Book Name"),
         "drowerTile": MessageLookupByLibrary.simpleMessage("Settings"),
+        "preivew": MessageLookupByLibrary.simpleMessage("Preview"),
         "results": MessageLookupByLibrary.simpleMessage("Results"),
-        "title": MessageLookupByLibrary.simpleMessage("Latest books")
+        "suggest": MessageLookupByLibrary.simpleMessage("you can also see"),
+        "title": MessageLookupByLibrary.simpleMessage("Latest books"),
+        "valedate":
+            MessageLookupByLibrary.simpleMessage("Please enter book name")
       };
 }

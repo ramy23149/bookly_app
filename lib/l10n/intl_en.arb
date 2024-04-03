@@ -4,5 +4,8 @@
   "appTheme":"App Theme",
   "appLanguage":"Translation",
   "results":"Results",
-  "bookName": "Book Name"
+  "bookName": "Book Name",
+  "valedate": "Please enter book name",
+  "suggest":"you can also see",
+  "preivew":"Preview"
 }

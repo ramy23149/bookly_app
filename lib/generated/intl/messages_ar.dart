@@ -26,7 +26,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "appTheme": MessageLookupByLibrary.simpleMessage("وضع التطبيق"),
         "bookName": MessageLookupByLibrary.simpleMessage("اسم الكتاب"),
         "drowerTile": MessageLookupByLibrary.simpleMessage("الاعدادات"),
+        "preivew": MessageLookupByLibrary.simpleMessage("مشاهدة"),
         "results": MessageLookupByLibrary.simpleMessage("النتائج"),
-        "title": MessageLookupByLibrary.simpleMessage("احدث الكتب")
+        "suggest": MessageLookupByLibrary.simpleMessage("يمكنك ايضا مشاهدة"),
+        "title": MessageLookupByLibrary.simpleMessage("احدث الكتب"),
+        "valedate":
+            MessageLookupByLibrary.simpleMessage("الرجاء ادخال اسم الكتاب")
       };
 }

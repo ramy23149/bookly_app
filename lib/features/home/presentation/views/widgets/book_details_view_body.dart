@@ -20,7 +20,7 @@ final BookModel bookModel;
               children: [
               const  CostoumBookDetailsAppbar(),
               const  SizedBox(
-                  height: 100,
+                  height: 70,
                 ),
                 BookDetailsSection(
                   bookModel: bookModel,
@@ -30,8 +30,8 @@ final BookModel bookModel;
                     height: 50,
                   ),
                 ),
-            const    SmilerBooksSection(
-                  
+              SmilerBooksSection(
+                  subject: bookModel.volumeInfo.categories?.first??'general',
                 ),
               const  SizedBox(
                   height: 40,

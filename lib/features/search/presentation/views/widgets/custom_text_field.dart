@@ -5,23 +5,50 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../../generated/l10n.dart';
 
-class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key});
+class CustomTextField extends StatefulWidget {
+  const CustomTextField({
+    super.key,
+  });
+
+  @override
+  State<CustomTextField> createState() => _CustomTextFieldState();
+}
+
+class _CustomTextFieldState extends State<CustomTextField> {
+  late TextEditingController? controller;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    controller = TextEditingController();
+  }
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    controller!.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
+    var bloc = BlocProvider.of<SearchCubit>(context);
     return TextField(
+    
+      
+      controller: controller,
+      
       onSubmitted: (value) {
-        
-  BlocProvider.of<SearchCubit>(context).getSerchBooks(bookName: value);
-
-            },
+        bloc.getSerchBooks(bookName: value);
+      },
       decoration: InputDecoration(
         enabledBorder: buildOutLineInputBorder(Colors.grey),
         focusedBorder: buildOutLineInputBorder(Colors.white),
         hintText: S.of(context).bookName,
         suffixIcon: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            bloc.getSerchBooks(bookName: controller!.text);
+          },
           icon: const Opacity(
             opacity: .8,
             child: Icon(

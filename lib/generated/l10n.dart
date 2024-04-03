@@ -109,6 +109,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Please enter book name`
+  String get valedate {
+    return Intl.message(
+      'Please enter book name',
+      name: 'valedate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `you can also see`
+  String get suggest {
+    return Intl.message(
+      'you can also see',
+      name: 'suggest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Preview`
+  String get preivew {
+    return Intl.message(
+      'Preview',
+      name: 'preivew',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

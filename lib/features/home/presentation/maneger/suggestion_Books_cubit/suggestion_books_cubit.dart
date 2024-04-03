@@ -12,9 +12,9 @@ class SuggestionBooksCubit extends Cubit<SuggestionBooksState> {
   final BookModel bookModel;
   
 
-  Future<void> fetchSuggestionBooks() async {
+  Future<void> fetchSuggestionBooks({required String subject}) async {
     emit(SuggestionBooksLoadding());
-    var resulte = await homeRepo.suggestionBooks(category: bookModel.volumeInfo.categories![0]);
+    var resulte = await homeRepo.suggestionBooks(category: subject);
 
     return resulte.fold((falier) => emit(SuggestionBooksFailer(falier.errMasessge)), (books) => emit(SuggestionBooksSuccess(books)));
   }

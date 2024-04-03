@@ -51,8 +51,10 @@ final  BookModel bookModel;
                       height: 3,
                     ),
                     Text(
-                      bookModel.volumeInfo.authors![0],
+                      bookModel.volumeInfo.authors?[0]??'No Author Found',
                       style: Styles.textStyle14,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
                     const SizedBox(
                       height: 3,

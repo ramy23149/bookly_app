@@ -30,15 +30,13 @@ abstract class RouterApp {
         builder: (context, state) => const HomeView(),
       ),
       GoRoute(
-          builder: (context, state) => BlocProvider(
-                create: (context) => SuggestionBooksCubit(
-                    getIt.get<HomeRepoImpl>(), state.extra as BookModel)
-                  ..fetchSuggestionBooks(),
-                child: BookDetailsView(
+          path: kBookDetailsView,
+          builder: (context, state) =>
+                 BookDetailsView(
                   bookModel: state.extra as BookModel,
                 ),
               ),
-          path: kBookDetailsView),
+  
       GoRoute(
           builder: (context, state) => BlocProvider(
                 create: (context) => SearchCubit(

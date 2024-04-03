@@ -1,4 +1,4 @@
-import 'package:bookly_app/core/widgets/t;hemeNotifier.dart';
+import 'package:bookly_app/core/widgets/appNotifier.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -17,7 +17,7 @@ class SwitchThemeApp extends StatefulWidget {
 class _SwitchThemeAppState extends State<SwitchThemeApp> {
   bool isActive = true;
 
-  void onThemeChange(bool value, ThemeNotifier theme) async {
+  void onThemeChange(bool value, AppNotifier theme) async {
     if (value == false) {
       theme.setTheme(darkTheme);
     } else {
@@ -31,8 +31,7 @@ class _SwitchThemeAppState extends State<SwitchThemeApp> {
 
   @override
   Widget build(BuildContext context) {
-    final themeMode = Provider.of<ThemeNotifier>(context);
-    //themeMode.getTheme;
+    final themeMode = Provider.of<AppNotifier>(context);
     return Switch(
         activeColor: Colors.white,
         activeThumbImage: const AssetImage('assets/images/moon.png'),

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../../../../generated/l10n.dart';
+
 class CustomTextField extends StatelessWidget {
   const CustomTextField({super.key});
 
@@ -17,7 +19,7 @@ class CustomTextField extends StatelessWidget {
       decoration: InputDecoration(
         enabledBorder: buildOutLineInputBorder(Colors.grey),
         focusedBorder: buildOutLineInputBorder(Colors.white),
-        hintText: 'Book Name',
+        hintText: S.of(context).bookName,
         suffixIcon: IconButton(
           onPressed: () {},
           icon: const Opacity(

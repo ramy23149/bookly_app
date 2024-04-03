@@ -3,6 +3,8 @@ import 'package:bookly_app/features/home/presentation/views/widgets/switch.dart'
 import 'package:flutter/material.dart';
 
 import '../../../../core/styles.dart';
+import '../../../../generated/l10n.dart';
+import 'widgets/translate.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({
@@ -11,12 +13,12 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  SafeArea(
+    return const SafeArea(
       child: Scaffold(
-        body:const HomeViewBody(),
+        body: HomeViewBody(),
         drawer: Drawer(
         
-          child:const DrawerBody(),
+          child: DrawerBody(),
         ),
       ),
     );
@@ -31,8 +33,8 @@ class DrawerBody extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
-          'Settings',
+         Text(
+          S.of(context).drowerTile,
           style: Styles.textStyle20,
         ),
         const Divider(
@@ -41,15 +43,32 @@ class DrawerBody extends StatelessWidget {
         Row(
           children: [
             Text(
-              'App theme',
+              S.of(context).appTheme,
               style: Styles.textStyle16.copyWith(fontWeight: FontWeight.bold),
             ),
             const SizedBox(
               width: 7,
             ),
             const Icon(Icons.brightness_4_sharp),
-            Spacer(),
-            const SwitchThemeApp()
+          const  Spacer(),
+            const SwitchThemeApp(),
+          ],
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        Row(
+          children: [
+            Text(
+              S.of(context).appLanguage,
+              style: Styles.textStyle16.copyWith(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(
+              width: 7,
+            ),
+            const Icon(Icons.translate_sharp),
+          const  Spacer(),
+          const  TranslateSwitcher()
           ],
         ),
       ],

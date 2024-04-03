@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 ThemeData? activeTheme;
+Locale? localeLung;
+
 
 final ThemeData lightTheme = ThemeData.light().copyWith(
   scaffoldBackgroundColor: Colors.white,

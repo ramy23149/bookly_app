@@ -5,6 +5,8 @@ import 'package:bookly_app/features/home/presentation/views/widgets/costum_appba
 import 'package:bookly_app/features/home/presentation/views/widgets/newset_list_view.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../generated/l10n.dart';
+
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({
     super.key,
@@ -18,30 +20,30 @@ class _HomeViewBodyState extends State<HomeViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      physics: BouncingScrollPhysics(),
+    return  SingleChildScrollView(
+      physics:const BouncingScrollPhysics(),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
+        const  Padding(
             padding: EdgeInsets.only(left: 10),
             child: CostumAppBar(),
           ),
-          NewsetBooks(),
-          SizedBox(
+        const  NewsetBooks(),
+        const  SizedBox(
             height: 50,
           ),
           Padding(
             padding: kPadding,
             child: Text(
-              'Best Seller',
+              S.of(context).title,
               style: Styles.textStyle18,
             ),
           ),
-          SizedBox(
+        const  SizedBox(
             height: 25,
           ),
-          FeaturedBooks(),
+      const FeaturedBooks(),
         ],
       ),
     );

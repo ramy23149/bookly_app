@@ -4,6 +4,8 @@ import 'package:bookly_app/features/search/presentation/views/widgets/search_res
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../../generated/l10n.dart';
+
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({
     super.key,
@@ -25,8 +27,8 @@ class SearchViewBody extends StatelessWidget {
           const SizedBox(
             height: 25,
           ),
-          const Text(
-            'Result',
+           Text(
+            S.of(context).results,
             style: Styles.textStyle18,
           ),
           const SizedBox(

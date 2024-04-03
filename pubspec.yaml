@@ -30,6 +30,8 @@ environment:
 dependencies:
   cached_network_image: ^3.3.1
   cupertino_icons: ^1.0.2
+  flutter_localizations:
+        sdk: flutter
   dartz: ^0.10.1
   dio: ^5.4.0
   equatable: ^2.0.5
@@ -54,7 +56,6 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -85,3 +86,5 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter_intl:
+  enabled: true

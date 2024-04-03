@@ -1,5 +1,4 @@
 import 'package:bookly_app/features/search/presentation/maneger/searching_cubit/search_cubit.dart';
-import 'package:bookly_app/features/search/presentation/views/widgets/inital_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

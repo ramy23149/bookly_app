@@ -15,40 +15,34 @@ class HomeViewBody extends StatefulWidget {
 }
 
 class _HomeViewBodyState extends State<HomeViewBody> {
-  final Future<void> Function() onRefresh = () async {
-    await Future.delayed(Duration(seconds: 3));
-  };
+
   @override
   Widget build(BuildContext context) {
-    return RefreshIndicator(
-      edgeOffset: 20,
-      onRefresh: onRefresh,
-      child: const SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsets.only(left: 30),
-              child: CostumAppBar(),
+    return const SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(left: 10),
+            child: CostumAppBar(),
+          ),
+          NewsetBooks(),
+          SizedBox(
+            height: 50,
+          ),
+          Padding(
+            padding: kPadding,
+            child: Text(
+              'Best Seller',
+              style: Styles.textStyle18,
             ),
-            NewsetBooks(),
-            SizedBox(
-              height: 50,
-            ),
-            Padding(
-              padding: kPadding,
-              child: Text(
-                'Best Seller',
-                style: Styles.textStyle18,
-              ),
-            ),
-            SizedBox(
-              height: 25,
-            ),
-            FeaturedBooks(),
-          ],
-        ),
+          ),
+          SizedBox(
+            height: 25,
+          ),
+          FeaturedBooks(),
+        ],
       ),
     );
   }

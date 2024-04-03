@@ -1,17 +1,36 @@
-import 'package:bookly_app/constans.dart';
 import 'package:bookly_app/core/router.dart';
 import 'package:bookly_app/core/service_locator.dart';
+import 'package:bookly_app/core/widgets/t;hemeNotifier.dart';
+import 'package:bookly_app/core/widgets/themes.dart';
 import 'package:bookly_app/features/home/data/repos/home_repo_impl.dart';
 import 'package:bookly_app/features/home/presentation/maneger/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly_app/features/home/presentation/maneger/newset_books_cubit/newset_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-
-void main() {
+void main()async {
+  WidgetsFlutterBinding.ensureInitialized();
+await  SharedPreferences.getInstance().then((pref) {
+    var themeMode = pref.getBool('themeMode');
+    if (themeMode == true) {
+      activeTheme = lightTheme;
+    } else {
+      activeTheme = darkTheme;
+    }
+  });
   setupServiceLocator();
-  runApp(const BooklyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => ThemeNotifier(activeTheme),
+        ),
+      ],
+      child: const BooklyApp(),
+    ),
+  );
 }
 
 class BooklyApp extends StatelessWidget {
@@ -19,6 +38,7 @@ class BooklyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeNotifer= Provider.of<ThemeNotifier>(context);
     return MultiBlocProvider(
       providers: [
         BlocProvider(
@@ -34,13 +54,9 @@ class BooklyApp extends StatelessWidget {
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
-        theme: ThemeData.dark().copyWith(
-          scaffoldBackgroundColor: KColor,
-          textTheme: GoogleFonts.montserratTextTheme(
-            ThemeData.dark().textTheme,
-          ),
-        ),
+        theme:themeNotifer.getTheme,
         routerConfig: RouterApp.router,
+        //  routeInformationParser: RouterApp.router.routeInformationParser,
       ),
     );
   }
